@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Entrada de dados</title>
+</head>
+<body>
+	<script>
+		var nome = prompt("Digite seu nome completo:");
+		var idade = Number.parseInt(prompt("Digite sua idade:"));
+		var endereco = prompt("Digite seu endereço:");
+		var telefone = prompt("Digite seu telefone:");
+		var email = prompt("Digite seu email:");
+		var cpf = prompt("Digite seu CPF:");
+		
+		document.writeln('<img src="img/banco.png">');
+		document.writeln('<p>Bem-vindo ao banco DevsBank, seu nome completo é ' + nome + ',<br>você tem ' + idade + ' anos e mora na ' + endereco + ',<br>você deve usar o email: ' + email + ' para usar o sistema,<br>seu identificador único é: ' + cpf + ',<br>e seus dados para contato são: ' + telefone + '.</p>');
+	</script>
+</body>
+</html>
