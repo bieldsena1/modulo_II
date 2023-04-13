@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adicionar Filme ao Database</title>
+</head>
+<body>
+	<form>
+		<label for="nomeFilme">Nome do Filme:</label>
+		<input type="text" id="nomeFilme" name="nomeFilme"><br><br>
+		
+		<label for="anoLancamento">Ano de Lançamento:</label>
+		<input type="number" id="anoLancamento" name="anoLancamento"><br><br>
+
+		<label for="nomeProtagonista">Nome do Protagonista:</label>
+		<input type="text" id="nomeProtagonista" name="nomeProtagonista"><br><br>
+
+		<button type="button" onclick="adicionarFilme()">Adicionar ao Database</button>
+	</form>
+
+	<script>
+		let database = [];
+
+		function adicionarFilme() {
+			let nomeFilme = document.getElementById("nomeFilme").value;
+			let anoLancamento = document.getElementById("anoLancamento").value;
+			let nomeProtagonista = document.getElementById("nomeProtagonista").value;
+
+			let filme = {
+				nome: nomeFilme,
+				lancamento: anoLancamento,
+				protagonista: nomeProtagonista
+			};
+
+			database.push(filme);
+
+			exibirDatabase();
+		}
+
+		function exibirDatabase() {
+			let resultado = "";
+
+			for(let i=0; i<database.length; i++) {
+				resultado += "Nome do Filme: " + database[i].nome + "<br>";
+				resultado += "Lançamento: " + database[i].lancamento + "<br>";
+				resultado += "Protagonista: " + database[i].protagonista + "<br><br>";
+			}
+
+			document.getElementById("output").innerHTML = resultado;
+		}
+	</script>
+
+	<div id="output"></div>
+</body>
+</html>
